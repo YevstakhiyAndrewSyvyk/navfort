@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/navfort/step_definitions",
         dryRun = false,
-        tags = "",
+        tags = "@loginScenarioOutline",
         publish = true  //Generating a report with public link
 
 
