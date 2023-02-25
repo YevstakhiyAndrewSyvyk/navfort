@@ -1,6 +1,7 @@
 package com.navfort.step_definitions;
 
 import com.navfort.pages.LoginPage;
+import com.navfort.utilities.ConfigurationReader;
 import com.navfort.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,7 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-import java.util.List;
+
 
 public class LoginPage_StepDefinitions {
 
@@ -16,11 +17,11 @@ public class LoginPage_StepDefinitions {
 
     @Given("User is on the Navfort login page")
     public void user_is_on_the_navfort_login_page() {
-        Driver.getDriver().get("https://qa.navfort.com/user/login");
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
     }
     @When("User types valid {string}")
-    public void user_types_valid(String login) {
-        loginPage.usernameBox.sendKeys(login);
+    public void user_types_valid(String username) {
+        loginPage.usernameBox.sendKeys(username);
 
     }
 
@@ -35,8 +36,7 @@ public class LoginPage_StepDefinitions {
     }
 
     @Then("User sees {string}")
-    public void user_sees(String password) {
-        String expectedTitle = "Dashboard";
+    public void user_sees(String expectedTitle) {
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
     }
