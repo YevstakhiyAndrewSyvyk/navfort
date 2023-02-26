@@ -14,7 +14,9 @@ public class Driver {
     We make the WebDriver private, because we want to close access from outside the class.
     We are making it static, because we will use it in a static method.
      */
-    private static WebDriver driver; // default value = null
+    //private static WebDriver driver; // default value = null
+
+    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
 
     /*
     Create a re-usable utility method which will return the same driver instance once we call it.
@@ -22,7 +24,7 @@ public class Driver {
      */
     public static WebDriver getDriver(){
 
-        if(driver == null){
+        if(driverPool.get() == null){
 
             /*
             We will read our browserType from configuration.properties file.
@@ -37,21 +39,21 @@ public class Driver {
             switch (browserType){
                 case "chrome":
                     //WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
-                    driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    driverPool.set(new ChromeDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
                 case "firefox":
                     //WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
-                    driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    driverPool.set(new FirefoxDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
             }
 
         }
 
-        return driver;
+        return driverPool.get();
 
     }
 
@@ -59,16 +61,15 @@ public class Driver {
     Create a new Driver.closeDriver(); it will use .quit() method to quit browsers, and then set the driver value back to null.
      */
     public static void closeDriver(){
-        if (driver!=null){
+        if (driverPool.get()!=null){
             /*
             This line will terminate the currently existing driver completely. It will not exist going forward.
              */
-            driver.quit();
+            driverPool.get().quit();
             /*
             We assign the value back to "null" so that my "singleton" can create a newer one if needed.
              */
-            driver = null;
+            driverPool.remove();
         }
     }
-
 }
