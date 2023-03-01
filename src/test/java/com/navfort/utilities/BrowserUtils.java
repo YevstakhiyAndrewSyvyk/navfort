@@ -228,6 +228,11 @@ public class BrowserUtils {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public static void clickElement (WebElement element) {
+        waitForVisibility(element, 10);
+        element.click();
+    }
+
     /**
      * Waits for element matching the locator to be clickable
      *

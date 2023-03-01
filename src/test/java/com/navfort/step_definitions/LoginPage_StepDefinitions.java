@@ -15,30 +15,35 @@ public class LoginPage_StepDefinitions {
 
     LoginPage loginPage = new LoginPage();
 
-    @Given("User is on the Navfort login page")
-    public void user_is_on_the_navfort_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
-    }
-    @When("User types valid {string}")
-    public void user_types_valid(String username) {
-        loginPage.usernameBox.sendKeys(username);
-
+    @Given("the user is on the login page")
+    public void the_user_is_on_the_login_page() {
+        System.out.println("Login to app in Before method");
     }
 
-    @And("User types correct {string}")
-    public void userTypesCorrect(String password) {
-        loginPage.passwordBox.sendKeys(password);
+    @Given("the user logged in as {string}")
+    public void the_user_logged_in_as(String userType) {
+        //based on input enter that user information
+        String username = null;
+        String password = null;
+
+        if(userType.equalsIgnoreCase("driver")){
+            username = ConfigurationReader.getProperty("driver_username");
+            password = ConfigurationReader.getProperty("driver_password");
+        }else if(userType.equalsIgnoreCase("sales manager")){
+            username = ConfigurationReader.getProperty("sales_manager_username");
+            password = ConfigurationReader.getProperty("sales_manager_password");
+        }else if(userType.equalsIgnoreCase("store manager")){
+            username = ConfigurationReader.getProperty("store_manager_username");
+            password = ConfigurationReader.getProperty("store_manager_password");
+        }
+        //send username and password and login
+        new LoginPage().login(username,password);
     }
 
-    @And("User clicks the login button")
-    public void userClicksTheLoginButton() {
-        loginPage.loginButton.click();
-    }
-
-    @Then("User sees {string}")
-    public void user_sees(String expectedTitle) {
-        String actualTitle = Driver.getDriver().getTitle();
-        Assert.assertEquals(expectedTitle,actualTitle);
+    @Given("the user logged in with username as {string} and password as {string}")
+    public void the_user_logged_in_with_username_as_and_password_as(String username, String password) {
+        LoginPage loginPage=new LoginPage();
+        loginPage.login(username,password);
     }
 
 

@@ -1,11 +1,15 @@
 package com.navfort.step_definitions;
 
+import com.navfort.utilities.BrowserUtils;
+import com.navfort.utilities.ConfigurationReader;
 import com.navfort.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+
+import java.time.Duration;
 
 /*
 In this class we will be able to create "pre" and "post" condition
@@ -17,6 +21,10 @@ public class Hooks {
     @Before (order = 1)
     public void setupMethod(){
         System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
+
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
     }
 
     //@Before (value = "@login", order = 2 )
@@ -28,7 +36,7 @@ public class Hooks {
     @After will be executed automatically after EVERY scenario in the project.
      */
     @After
-    public void teardownMethod(Scenario scenario){
+    public void teardownMethod(Scenario scenario) throws InterruptedException {
 
         if (scenario.isFailed()) {
 
