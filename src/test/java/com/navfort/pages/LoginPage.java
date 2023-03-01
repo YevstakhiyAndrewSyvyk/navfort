@@ -14,13 +14,20 @@ public class LoginPage {
     }
 
     @FindBy(id = "prependedInput")
-    public WebElement usernameBox;
+    public WebElement userName;
 
     @FindBy(id = "prependedInput2")
-    public WebElement passwordBox;
+    public WebElement password;
 
     @FindBy(id = "_submit")
-    public WebElement loginButton;
+    public WebElement submit;
+
+    public void login(String userNameStr, String passwordStr) {
+        userName.sendKeys(userNameStr);
+        password.sendKeys(passwordStr);
+        submit.click();
+        // verification that we logged
+    }
 
 
 }
