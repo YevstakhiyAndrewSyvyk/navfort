@@ -1,6 +1,7 @@
 package com.navfort.step_definitions;
 
 import com.navfort.pages.LoginPage;
+import com.navfort.utilities.BrowserUtils;
 import com.navfort.utilities.ConfigurationReader;
 import com.navfort.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -22,6 +23,8 @@ public class LoginPage_StepDefinitions {
 
     @Given("the user logged in as {string}")
     public void the_user_logged_in_as(String userType) {
+
+
         //based on input enter that user information
         String username = null;
         String password = null;
@@ -37,6 +40,7 @@ public class LoginPage_StepDefinitions {
             password = ConfigurationReader.getProperty("store_manager_password");
         }
         //send username and password and login
+        LoginPage loginPage1 = new LoginPage();
         new LoginPage().login(username,password);
     }
 
@@ -45,9 +49,6 @@ public class LoginPage_StepDefinitions {
         LoginPage loginPage=new LoginPage();
         loginPage.login(username,password);
     }
-
-
-
 
 
 }

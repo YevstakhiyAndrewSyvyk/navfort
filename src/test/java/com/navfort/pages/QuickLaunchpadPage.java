@@ -20,8 +20,15 @@ public class QuickLaunchpadPage {
 
     @FindBy(xpath = "//a[@href='javascript: void(0);']")
     public WebElement txt_username_profile;
+
     @FindBy(linkText = "Logout")
     public WebElement Logout;
+
+    @FindBy(xpath = "(//span[@class='title title-level-1'])[2]")
+    public WebElement FleetDropdown;
+
+    @FindBy (xpath = "//span[.='Vehicles']")
+    public WebElement VehiclesPageLink;
 
 
 
