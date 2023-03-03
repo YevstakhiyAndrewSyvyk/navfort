@@ -29,11 +29,12 @@ Feature: User should be able to select any vehicle from the Vehicle page(web tab
     When user checks the first checkbox to check all cars AS
     Then user verifies that all checkboxes for all cars are checked AS
 
-  Scenario: Verify that sales manager can successfully select any vehicle
+  Scenario: Scenario: Verify that store manager can successfully check the first checkbox to check all the cars
     Given the user logged in as "sales manager"
     Given the user is on the vehicle page AS
-    When user checks any vehicle AS
-    Then all of the selected vehicles are selected
+    When user checks the first checkbox to check all cars AS
+    Then user verifies that all checkboxes for all cars are checked AS
+
 
   Scenario: Verify that sales manager can successfully select any vehicle
     Given the user logged in as "store manager"
