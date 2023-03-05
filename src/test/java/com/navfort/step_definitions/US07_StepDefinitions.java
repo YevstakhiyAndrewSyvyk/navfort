@@ -14,7 +14,7 @@ import com.navfort.utilities.BrowserUtils;
 
 import java.util.List;
 
-public class US_07_StepDefinitions {
+public class US07_StepDefinitions {
 
     QuickLaunchpadPage quickLaunchpadPage = new QuickLaunchpadPage();
     VehiclesPage vehiclesPage = new VehiclesPage();
