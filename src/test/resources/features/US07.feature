@@ -1,5 +1,6 @@
 @US07
 Feature: User should be able to select any vehicle from the Vehicle page(web table)
+  User Story:  As a user, I want to check all available checkboxes.
 
   Background: User is already in the log in page
     Given the user is on the login page

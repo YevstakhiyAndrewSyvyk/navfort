@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class VehiclesPage_AS extends QuickLaunchpadPage {
+public class VehiclesPage_AS extends QuickLaunchpadPage_AS {
     public VehiclesPage_AS(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
