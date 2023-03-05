@@ -1,6 +1,5 @@
 package com.navfort.step_definitions;
 
-import com.navfort.pages.LoginPage;
 import com.navfort.pages.QuickLaunchpadPage;
 import com.navfort.pages.VehiclesPage;
 import com.navfort.utilities.Driver;
@@ -11,12 +10,11 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import com.navfort.utilities.BrowserUtils;
 
 import java.util.List;
 
-public class US_163_StepDefinitions {
+public class US_07_StepDefinitions {
 
     QuickLaunchpadPage quickLaunchpadPage = new QuickLaunchpadPage();
     VehiclesPage vehiclesPage = new VehiclesPage();
@@ -86,7 +84,6 @@ public class US_163_StepDefinitions {
         for (int i = 0; i < checkboxesAS.size() - 1; i++) {
             checkboxesAS.get(i).click();
         }
-
     }
 
     @Then("all of the selected vehicles are selected")
