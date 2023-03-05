@@ -1,7 +1,8 @@
 package com.navfort.step_definitions;
 
-import com.navfort.pages.QuickLaunchpadPage;
-import com.navfort.pages.VehiclesPage;
+
+import com.navfort.pages.QuickLaunchpadPage_AS;
+import com.navfort.pages.VehiclesPage_AS;
 import com.navfort.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,16 +17,16 @@ import java.util.List;
 
 public class US07_StepDefinitions {
 
-    QuickLaunchpadPage quickLaunchpadPage = new QuickLaunchpadPage();
-    VehiclesPage vehiclesPage = new VehiclesPage();
+    QuickLaunchpadPage_AS quickLaunchpadPage_as = new QuickLaunchpadPage_AS();
+    VehiclesPage_AS vehiclesPage_as = new VehiclesPage_AS();
 
     @Given("the user is on the vehicle page AS")
     public void the_user_is_on_the_vehicle_page_as() {
         BrowserUtils.waitForPageToLoad(5);
-        BrowserUtils.waitForClickablility(quickLaunchpadPage.FleetDropdown, 5);
+        BrowserUtils.waitForClickablility(quickLaunchpadPage_as.FleetDropdown, 5);
         Actions action = new Actions(Driver.getDriver());
-        action.moveToElement(quickLaunchpadPage.FleetDropdown).perform();
-        quickLaunchpadPage.VehiclesPageLink.click();
+        action.moveToElement(quickLaunchpadPage_as.FleetDropdown).perform();
+        quickLaunchpadPage_as.VehiclesPageLink.click();
     }
 
     @When("user sees all the checkboxes in the table AS")
@@ -56,7 +57,7 @@ public class US07_StepDefinitions {
     @When("user checks the first checkbox to check all cars AS")
     public void userChecksTheFirstCheckboxToCheckAllCars() {
 
-        vehiclesPage.MainCheckboxAS.click();
+        vehiclesPage_as.MainCheckboxAS.click();
 
     }
 
