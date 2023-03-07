@@ -503,7 +503,10 @@ public class BrowserUtils {
         element.click();
     }
 
-    public static void switchToFrame(WebElement element) {
+
+
+
+       public static void switchToFrame(WebElement element) {
         Driver.getDriver().switchTo().frame(element);
     }
 
