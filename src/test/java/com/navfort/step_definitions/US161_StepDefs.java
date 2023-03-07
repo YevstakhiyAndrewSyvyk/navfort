@@ -1,6 +1,7 @@
 package com.navfort.step_definitions;
 
 import com.navfort.pages.LoginPage;
+import com.navfort.pages.QuickLaunchpadPage;
 import com.navfort.pages.VehicleModelsPage_OT;
 import com.navfort.utilities.BrowserUtils;
 import com.navfort.utilities.ConfigurationReader;
@@ -20,11 +21,15 @@ public class US161_StepDefs {
     VehicleModelsPage_OT vehicleModelsPage=new VehicleModelsPage_OT();
 
 
+
+
     @When("the user hover {string} menu OT")
     public void the_user_hover_menu_OT(String fleetMenu) {
+        BrowserUtils.sleep(5);
         for (WebElement each : vehicleModelsPage.main_menu) {
             if (each.getText().equals(fleetMenu)) {
                 each.click();
+
             }
 
         }
@@ -45,11 +50,9 @@ public class US161_StepDefs {
         Assert.assertTrue(vehicleModelsPage.message_txt.getText().equals(expectedErrorText));
 
     }
-    @Given("the user logged in as a store manager OT")
-    public void the_user_logged_in_as_a_store_manager_OT() {
-        loginPage.login(ConfigurationReader.getProperty("store_manager_username"),ConfigurationReader.getProperty("store_manager_password"));
-BrowserUtils.sleep(5);
-    }
+
+
+
 
     @Then("the user can see expected columns name in the web-table OT")
     public void the_user_can_see_in_the_web_table_OT(List <String> expectedColumns) {
