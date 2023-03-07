@@ -30,9 +30,6 @@ public class QuickLaunchpadPage_AS {
     @FindBy (xpath = "//span[.='Vehicles']")
     public WebElement VehiclesPageLink;
 
-    @FindBy (xpath = "//i[@title='Get help']")
-    public WebElement GetHelpButton;
-
 
 
 
