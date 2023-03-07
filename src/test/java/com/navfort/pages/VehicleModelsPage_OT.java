@@ -33,22 +33,8 @@ public class VehicleModelsPage_OT extends QuickLaunchpadPage {
         }
 
         elemTexts.remove(0);
+        elemTexts.removeIf(str -> str == null || str.trim().isEmpty());
         elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-        elemTexts.remove(elemTexts.size()-1);
-
-
-
 
         return elemTexts;
 
