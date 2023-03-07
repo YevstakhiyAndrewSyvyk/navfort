@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class QuickLaunchpadPage {
-    public QuickLaunchpadPage() {
+public class QuickLaunchpadPage_AS {
+    public QuickLaunchpadPage_AS() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

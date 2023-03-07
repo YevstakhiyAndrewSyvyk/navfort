@@ -491,4 +491,17 @@ public class BrowserUtils {
     }
 
 
+    public static void waitForVisibilityOf(WebElement element) {//mina
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(element));
+
+    }
+    public static void clickElement(By by) {//mina
+        //need to have one condition for visibilty
+        WebElement element = Driver.getDriver().findElement(by);
+        waitForVisibilityOf(element);
+        element.click();
+    }
+
+
 }

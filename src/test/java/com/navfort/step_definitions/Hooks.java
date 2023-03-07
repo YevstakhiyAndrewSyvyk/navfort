@@ -46,6 +46,7 @@ public class Hooks {
         }
 
         System.out.println("---> @After: RUNNING AFTER EACH SCENARIO");
+        BrowserUtils.sleep(1);
         Driver.closeDriver();
 
     }
