@@ -2,7 +2,7 @@
 Feature:  User should see columns on the Vehicle models page
 User Story  As a user, I want to view columns on the Vehicle models page.
 
-@US161-AC1_1
+@US05-AC1_1
   Scenario: Verify sales manager has access to the Vehicle Models page
 
     Given the user logged in as "sales manager"
@@ -22,7 +22,7 @@ User Story  As a user, I want to view columns on the Vehicle models page.
       | FUEL TYPE                |
       | VENDORS                  |
 
-  @US161-AC1_2
+  @US05-AC1_2
 
   Scenario: Verify store manager has access to the Vehicle Models page
     Given the user logged in as "store manager"
@@ -41,7 +41,7 @@ User Story  As a user, I want to view columns on the Vehicle models page.
       | FUEL TYPE                |
       | VENDORS                  |
 
-  @US161-AC2_1
+  @US05-AC2_1
   Scenario: Verify driver can NOT access the Vehicle models page
     Given the user logged in as "driver"
     When the user hover "Fleet" menu OT

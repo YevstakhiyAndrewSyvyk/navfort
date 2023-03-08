@@ -1,12 +1,9 @@
 package com.navfort.step_definitions;
 
 import com.navfort.pages.LoginPage;
-import com.navfort.pages.QuickLaunchpadPage;
 import com.navfort.pages.VehicleModelsPage_OT;
 import com.navfort.utilities.BrowserUtils;
-import com.navfort.utilities.ConfigurationReader;
 import com.navfort.utilities.Driver;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -15,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
-public class US161_StepDefs {
+public class US05_StepDefs {
     LoginPage loginPage=new LoginPage();
 
     VehicleModelsPage_OT vehicleModelsPage=new VehicleModelsPage_OT();
