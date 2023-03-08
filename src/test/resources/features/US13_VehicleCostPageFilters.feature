@@ -26,13 +26,13 @@ Feature: As a user, I want to manage filters on the Vehicle Costs page. (Web tab
     Then user sees three expected columns
     #expectedColumns = TYPE, TOTAL VALUE, DATE
 
-  @wip
+
   Scenario: User check the first checkbox to check all the Vehicle Costs
     Given the user logged in as "sales manager"
     And the user click on Vehicle Cost option under the Fleet tab
     And the user click on the first checkbox
     Then the user sees all other checkboxes are selected
-  @wip
+
   Scenario: User check the first checkbox to check all the Vehicle Costs
     Given the user logged in as "store manager"
     And the user click on Vehicle Cost option under the Fleet tab
