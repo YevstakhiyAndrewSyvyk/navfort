@@ -41,7 +41,7 @@ Feature: User should be able to select any vehicle from the Vehicle page
     Then all of the selected vehicles are selected
 
   @US07_AC3_ST_MNG
-  Scenario: Verify that sales manager can successfully select any vehicle
+  Scenario: Verify that store manager can successfully select any vehicle
     Given the user logged in as "store manager"
     Given the user is on the vehicle page AS
     When user checks any vehicle AS
