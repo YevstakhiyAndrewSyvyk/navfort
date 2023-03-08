@@ -3,6 +3,11 @@ package com.navfort.step_definitions;
 import com.navfort.pages.QuickLaunchpadPage_AM;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class US01_StepDefinitions {
 
@@ -10,6 +15,15 @@ public class US01_StepDefinitions {
 
     @Then("user see all the eight modules")
     public void user_see_all_the_eight_modules() {
+        List<String> allActualModulesText = new ArrayList<>();
+        List<String> expectedAllModule = new ArrayList<>();
+        expectedAllModule.addAll(Arrays.asList("Dashboards","Fleet","Customers","Sales","Activities","Marketing","Reports & Segments","System"));
+
+        for (WebElement eachModule : basePage.allModuleButtonStoreAndSalesManager) {
+            allActualModulesText.add(eachModule.getText());
+        }
+        Assert.assertEquals(expectedAllModule,allActualModulesText);
+
         Assert.assertTrue(basePage.dashboardButton.isDisplayed());
         Assert.assertTrue(basePage.fleetButton.isDisplayed());
         Assert.assertTrue(basePage.customerButton.isDisplayed());
@@ -40,6 +54,16 @@ public class US01_StepDefinitions {
         Assert.assertTrue(basePage.customerButtonDriver.isDisplayed());
         Assert.assertTrue(basePage.activitiesButtonDriver.isDisplayed());
         Assert.assertTrue(basePage.systemButtonDriver.isDisplayed());
+
+        List<String> allActualModulesText = new ArrayList<>();
+        List<String> expectedAllModule = new ArrayList<>();
+        expectedAllModule.addAll(Arrays.asList("Fleet","Customers","Activities","System"));
+
+        for (WebElement eachModule : basePage.allModuleButtonStoreAndSalesManager) {
+            allActualModulesText.add(eachModule.getText());
+        }
+        Assert.assertEquals(expectedAllModule,allActualModulesText);
+
     }
 
     @Then("user should access the four modules")

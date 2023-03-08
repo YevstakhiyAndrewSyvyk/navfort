@@ -11,6 +11,7 @@ Feature: User should be able to see and access all the modules names
     Then user see all the eight modules
     Then user should access all the eight modules
 
+
   @US01-2
   Scenario: sales manager should view 8 modules name.
     Given the user logged in as "sales manager"
