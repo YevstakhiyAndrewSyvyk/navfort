@@ -4,7 +4,7 @@ import com.navfort.pages.QuickLaunchpadPage_AM;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-
+import com.navfort.utilities.BrowserUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,6 +15,8 @@ public class US01_StepDefinitions {
 
     @Then("user see all the eight modules")
     public void user_see_all_the_eight_modules() {
+        BrowserUtils.waitForPageToLoad(5);
+        BrowserUtils.waitForVisibility(basePage.fleetButton,5);
         List<String> allActualModulesText = new ArrayList<>();
         List<String> expectedAllModule = new ArrayList<>();
         expectedAllModule.addAll(Arrays.asList("Dashboards","Fleet","Customers","Sales","Activities","Marketing","Reports & Segments","System"));
@@ -37,6 +39,8 @@ public class US01_StepDefinitions {
 
     @Then("user should access all the eight modules")
     public void userShouldAccessAllTheEightModules() {
+        BrowserUtils.waitForPageToLoad(5);
+        BrowserUtils.waitForVisibility(basePage.fleetButton,5);
         Assert.assertTrue(basePage.dashboardButton.isEnabled());
         Assert.assertTrue(basePage.fleetButton.isEnabled());
         Assert.assertTrue(basePage.customerButton.isEnabled());
@@ -50,6 +54,8 @@ public class US01_StepDefinitions {
 
     @Then("user should see the four modules")
     public void userSeeTheFourModules() {
+        BrowserUtils.waitForPageToLoad(5);
+        BrowserUtils.waitForVisibility(basePage.activitiesButtonDriver,5);
         Assert.assertTrue(basePage.fleetButtonDriver.isDisplayed());
         Assert.assertTrue(basePage.customerButtonDriver.isDisplayed());
         Assert.assertTrue(basePage.activitiesButtonDriver.isDisplayed());
@@ -68,6 +74,8 @@ public class US01_StepDefinitions {
 
     @Then("user should access the four modules")
     public void userShouldAccessTheFourModules() {
+        BrowserUtils.waitForPageToLoad(5);
+        BrowserUtils.waitForVisibility(basePage.fleetButtonDriver,5);
         Assert.assertTrue(basePage.fleetButtonDriver.isEnabled());
         Assert.assertTrue(basePage.customerButtonDriver.isEnabled());
         Assert.assertTrue(basePage.activitiesButtonDriver.isEnabled());
