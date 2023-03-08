@@ -17,6 +17,7 @@ public class US02_StepDefinitions {
     @When("the user clicks on a Get Help Button AS")
     public void the_user_clicks_on_a_get_help_button_as() {
         BrowserUtils.waitForPageToLoad(5);
+        BrowserUtils.waitForClickablility(quickLaunchpadPage_as.GetHelpButton,5);
         quickLaunchpadPage_as.GetHelpButton.click();
     }
     @Then("the user reaches the Oroinc page")
