@@ -504,4 +504,12 @@ public class BrowserUtils {
     }
 
 
+
+
+       public static void switchToFrame(WebElement element) {
+        Driver.getDriver().switchTo().frame(element);
+    }
+
+
+
 }
