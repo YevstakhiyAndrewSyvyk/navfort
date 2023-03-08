@@ -22,7 +22,7 @@ public class US08_StepDefinitions {
 
     @Then("user clicks create calendar event MY")
     public void user_clicks_create_calendar_event_my() {
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(5);
         calendarEventsPageMy.createCalenderEvent_btn.click();
     }
 
