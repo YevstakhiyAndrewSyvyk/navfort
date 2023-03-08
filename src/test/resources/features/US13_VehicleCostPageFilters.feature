@@ -6,21 +6,21 @@ Feature: As a user, I want to manage filters on the Vehicle Costs page. (Web tab
     Given the user is on the login page
 
 
-  Scenario:  Users should see 3 columns on the Vehicle Model page
+  Scenario:  Users should see 3 columns on the Vehicle Costs page
     Given the user logged in as "driver"
     When the user click on Vehicle Cost option under the Fleet tab as driver
     Then user sees three expected columns
     #expectedColumns = TYPE, TOTAL VALUE, DATE
 
 
-  Scenario:  Users should see 3 columns on the Vehicle Model page
+  Scenario:  Users should see 3 columns on the Vehicle Costs page
     Given the user logged in as "sales manager"
     When the user click on Vehicle Cost option under the Fleet tab
     Then user sees three expected columns
     #expectedColumns = TYPE, TOTAL VALUE, DATE
 
 
-  Scenario:  Users should see 3 columns on the Vehicle Model page
+  Scenario:  Users should see 3 columns on the Vehicle Costs page
     Given the user logged in as "store manager"
     When the user click on Vehicle Cost option under the Fleet tab
     Then user sees three expected columns
