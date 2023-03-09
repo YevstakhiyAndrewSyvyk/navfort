@@ -11,7 +11,7 @@ Feature:As a user, I want to access to Vehicle contracts page
     Then Then user clicks "Fleet" main menu and sub menu "Vehicle Contract"
     Then the user should see title "All - Vehicle Contract - Entities - System - Car - Entities - System"
 
-  Scenario:Store managers access the Vehicle contracts page.
+  Scenario:Sales managers access the Vehicle contracts page.
     Given the user is on the login page
     When the user logged in as "Sales manager"
     Then Then user clicks "Fleet" main menu and sub menu "Vehicle Contract"

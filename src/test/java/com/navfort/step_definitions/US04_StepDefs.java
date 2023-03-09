@@ -15,7 +15,7 @@ public class US04_StepDefs {
 
     @Then("Then user clicks {string} main menu and sub menu {string}")
     public void then_user_clicks_main_menu_and_sub_menu(String link1, String link2) {
-        BrowserUtils.sleep(6);
+        BrowserUtils.sleep(7);
         mainPageStoreManager_sb.fleetLink.click();
         BrowserUtils.sleep(3);
         mainPageStoreManager_sb.vehicleContracts.click();
