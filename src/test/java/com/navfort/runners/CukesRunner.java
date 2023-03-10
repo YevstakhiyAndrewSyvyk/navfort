@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/navfort/step_definitions",
         dryRun = false,
-        tags = "@US04",
+        tags = "",
         publish = true  //Generating a report with public link
 
 
